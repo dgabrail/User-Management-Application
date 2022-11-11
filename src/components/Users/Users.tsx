@@ -1,11 +1,17 @@
 import React from 'react';
-
-const User = () => {
+import {User} from "../../types.d";
+import UserItem from "../UserItem/UserItem";
+interface  Props {
+    users: User[]
+}
+const Users: React.FC<Props> = ({users}) => {
     return (
-        <div>
-            
-        </div>
+        <>
+            {users.map((user, index) => (
+                <UserItem key={index} user={user}/>
+            ))}
+        </>
     );
 };
 
-export default User;
+export default Users;
